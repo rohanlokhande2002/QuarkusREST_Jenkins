@@ -15,6 +15,9 @@
         <quarkus.platform.version>3.30.2</quarkus.platform.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.5.4</surefire-plugin.version>
+
+        <!-- JaCoCo coverage output file -->
+        <jacoco.destfile>${project.build.directory}/jacoco.exec</jacoco.destfile>
     </properties>
 
     <dependencyManagement>
