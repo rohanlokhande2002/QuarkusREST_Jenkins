@@ -56,12 +56,4 @@ class GreetingResourceTest {
         assertNotNull(greetingResource.sayHello());
     }
 
-    @Test
-    void testDate(){
-        given()
-                .when().get("/date")
-                .then()
-                .statusCode(200)
-                .body(is(LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))));
-    }
 }

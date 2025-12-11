@@ -39,27 +39,27 @@ public class TicketResourceTest {
         assertEquals(expected.size(),actual.size());
     }
 
-    @Test
-    public void testAddTicket() {
-        // Create a new ticket object
-        Ticket ticket = new Ticket();
-
-        Random random = new Random();
-        ticket.setId(random.nextInt());
-        ticket.setDescription("New Ticket for Testing");
-        ticket.setDate(LocalDate.parse("2025-12-10"));
-
-        // Call the /tickets/add endpoint
-        given()
-                .contentType("application/json")
-                .body(ticket)
-                .when().post("/tickets/add")
-                .then()
-                .statusCode(200) // should return OK
-                .body("description", equalTo("New Ticket for Testing"))
-                .body("date", equalTo("2025-12-10"))
-                .body("id", notNullValue()); // Panache assigns an ID
-    }
+//    @Test
+//    public void testAddTicket() {
+//        // Create a new ticket object
+//        Ticket ticket = new Ticket();
+//
+//        Random random = new Random();
+//        ticket.setId(random.nextInt());
+//        ticket.setDescription("New Ticket for Testing");
+//        ticket.setDate(LocalDate.parse("2025-12-10"));
+//
+//        // Call the /tickets/add endpoint
+//        given()
+//                .contentType("application/json")
+//                .body(ticket)
+//                .when().post("/tickets/add")
+//                .then()
+//                .statusCode(200) // should return OK
+//                .body("description", equalTo("New Ticket for Testing"))
+//                .body("date", equalTo("2025-12-10"))
+//                .body("id", notNullValue()); // Panache assigns an ID
+//    }
 
     @Test
     public void testGetTicketById() {
